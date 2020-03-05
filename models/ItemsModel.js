@@ -1,13 +1,30 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  synopsis: String,
-  date: { type: Date, default: Date.now }
+const itemsSchema = new Schema({
+image: {
+    type: String,
+    default:""
+},
+  
+itemname: { type: String, 
+required: true 
+},
+  startingbid: { type: Number, required: true 
+},  
+  buyout: {type:Number,
+    required:true
+},
+category:{
+    type: String,
+    required:true
+},
+  condition: { type: String,
+    required:true 
+}
+
 });
 
-const Book = mongoose.model("Book", bookSchema);
+const Items = mongoose.model("Items", itemsSchema);
 
-module.exports = Book;
+module.exports = Items;
