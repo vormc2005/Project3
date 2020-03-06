@@ -4,16 +4,16 @@ const itemController =require("../../controllers/itemController");
 
 //Matches with /api/items
 router.route("/")
-.get(itemController.findAll)
+.get(itemController.findAll) // itemController.findAll
 .post(itemController.create);
 
 //Matches with "/api/items/:id"
 
-router
- .route("/:id")
- .get(itemController.findById)
- .update(itemController.update)
- .delete(itemController.remove);
+// router
+//  .route("/:id")
+//  .get(itemController.findById)
+//  .update(itemController.update)
+//  .delete(itemController.remove);
 
  module.exports = router;
 

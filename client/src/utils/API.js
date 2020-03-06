@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
   // Gets all items
   getAllItems: function() {
-    return axios.get("/api/items");
+    return axios.get("/api/items/");
   },
   // Gets the item with the given id
   getItem: function(id) {
@@ -15,6 +15,6 @@ export default {
   },
   // Saves an item to the database
   saveItem: function(itemData) {
-    return axios.post("/api/items", itemData);
+    return axios.post("/api/items/", itemData);
   }
 };

@@ -17,6 +17,7 @@ class Bid extends Component {
 
   displayData = query => {
     API.getAllItems(query).then(res => {
+      console.log(res);
       this.setState({
         results: res.data.results
       })
@@ -26,7 +27,7 @@ class Bid extends Component {
   searchData = query => {
     API.getItem(query).then(res => {
       this.setState({
-        results: res.data.results
+        results: res.data
       })
     }).catch(err => console.log(err));
   }
@@ -73,8 +74,9 @@ class Bid extends Component {
             <option id="fashion" value="fashion">Fashion</option>
             <option id="sportingGoods" value="sportingGoods">Sporting Goods</option>
             <option id="businessIndustrial" value="businessIndustrial">Business and Industrial</option>
+            <button className="btn btn-outline-secondary" type="button" id="searchAlcBtn">Search</button>
           </select>
-          <button className="btn btn-outline-secondary" type="button" id="searchAlcBtn">Search</button>
+          
         </div>
         <div className="card mb-3" style={{ width: "90%" }}>
           {this.state.items.filter(item =>
